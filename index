@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>😝 Kimi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: radial-gradient(ellipse at top, #ffe6f7 0%, #ccf5ff 100%);
+      overflow: hidden;
+    }
+
+    .stars {
+      background: url('https://images.app.goo.gl/rs1hztAbT6uLGTtX8') repeat;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+      color: #ff69b4;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      animation: colorChange 5s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0% { color: #ff69b4; }
+      50% { color: #ff85a2; }
+      100% { color: #ffb6c1; }
+    }
+
+    .message {
+      font-size: 1.6em;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 25px;
+      display: inline-block;
+      max-width: 600px;
+      line-height: 1.6em;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .cat-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .cat-img {
+      width: 160px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .cat-img:hover {
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    .btn {
+      background: #ff90c2;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 40px;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff6090;
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 20px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="container">
+    <h1>😝 Kimi!</h1>
+    <div class="message">
+      You are like a magical star in the night sky — <br>
+      always bright, warm, and inspiring! <br>
+      I hope this little website brings you a smile!
+    </div>
+
+    <div class="cat-gallery">
+      <img class="cat-img" src="https://cataas.com/cat/cute?1" alt="Cute Cat">
+      <img class="cat-img" src="https://cataas.com/cat/cute?2" alt="Cute Cat">
+      <img class="cat-img" src="https://cataas.com/cat/cute?3" alt="Cute Cat">
+    </div>
+
+    <button class="btn" onclick="showSurprise()">Click Me :)</button>
+    <div id="surprise">
+      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Surprise Cat" width="300">
+      <p>Here's a surprise! The kitty says: *meow* — you're amazing!</p>
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function showSurprise() {
+      document.getElementById('surprise').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
